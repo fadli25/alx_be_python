@@ -1,14 +1,21 @@
-# Prompt the user for financial details
-monthly_income = float(input("Enter your monthly income: "))
-total_monthly_expenses = float(input("Enter your total monthly expenses: "))
+def main():
+  """
+  Calculates monthly savings and projected annual savings with interest.
+  """
+  # User Input
+  income = float(input("Enter your monthly income: "))
+  expenses = float(input("Enter your total monthly expenses: "))
 
-# Calculate monthly savings
-monthly_savings = monthly_income - total_monthly_expenses
+  # Calculate Monthly Savings
+  monthly_savings = income - expenses
 
-# Project annual savings with a 5% interest rate
-annual_savings = monthly_savings * 12
-projected_savings = annual_savings * 1.05
+  # Project Annual Savings (Simplified Formula)
+  annual_interest_rate = 0.05  # 5% annual interest rate
+  projected_savings = monthly_savings * 12 + (monthly_savings * 12 * annual_interest_rate)
 
-# Output the results
-print(f"Your monthly savings are ${monthly_savings:.2f}.")
-print(f"Projected savings after one year, with interest, is: ${projected_savings:.2f}.")
+  # Output Results
+  print(f"Your monthly savings are ${monthly_savings:.2f}.")
+  print(f"Projected savings after one year, with interest, is: ${projected_savings:.2f}.")
+
+if __name__ == "__main__":
+  main()
