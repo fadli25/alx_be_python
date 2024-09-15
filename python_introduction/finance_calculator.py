@@ -10,8 +10,8 @@ def calculate_savings(income, expenses):
     A tuple containing monthly savings and projected annual savings.
   """
 
-  if income < expenses:
-    raise ValueError("Monthly income must be greater than monthly expenses.")
+  if income <= expenses:
+    raise ValueError("Monthly income must be greater than or equal to monthly expenses.")
 
   monthly_savings = income - expenses
   annual_interest_rate = 0.05  # 5% annual interest rate
